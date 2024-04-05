@@ -23,10 +23,10 @@ jobs:
           include-prerelease: true
 
       - name: Build with dotnet
-        run: dotnet build --configuration Release src/HelloAzure.sln
+        run: dotnet build --configuration Release
 
       - name: dotnet publish
-        run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp src/HelloAzure.sln
+        run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
@@ -52,9 +52,9 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v1
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_008A5A99422B49A2801DE625781FB6A0 }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_48304C56473845EA9EDB740325BD961A }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_74B2172B4F9E4B2E81DA5C10B0F334A7 }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_1B6DE18EBB9A44BF8376C2BB59711292 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_0918AA15AD2E4B51B81E3A87CF8DD3D7 }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_2E01BA74751D4EF7BED4F3BF22695EDE }}
 
       - name: Deploy to Azure Web App
         id: deploy-to-webapp

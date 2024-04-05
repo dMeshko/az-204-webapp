@@ -48,6 +48,7 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: .net-app
+          path: myapp
       
       - name: Login to Azure
         uses: azure/login@v1
@@ -62,5 +63,5 @@ jobs:
         with:
           app-name: 'hello-azure-dm-blazor-webapp'
           slot-name: 'staging'
-          package: .
+          package: myapp
           

@@ -1,0 +1,15 @@
+﻿@page "/"
+@using HelloAzure.Config
+@using Microsoft.Extensions.Options
+@inject IOptions<RuntimeEnvironment> _options
+
+<PageTitle>Home</PageTitle>
+
+<h1>Hello, world!</h1>
+
+Welcome to your new app.
+
+<hr />
+
+<h3><i>Tenant: </i>@_options.Value.Tenant</h3>
+<h3><i>Version: </i>v@_options.Value.Version</h3>
